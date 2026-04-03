@@ -1,5 +1,8 @@
 package com.programacion4.unidad3ej3.feature.producto.mappers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.programacion4.unidad3ej3.feature.producto.dtos.request.ProductoCreateRequestDto;
 import com.programacion4.unidad3ej3.feature.producto.dtos.response.ProductoResponseDto;
 import com.programacion4.unidad3ej3.feature.producto.models.Producto;
@@ -25,5 +28,9 @@ public class ProductoMapper {
         dto.setPrecio(producto.getPrecio());
         dto.setStock(producto.getStock());
         return dto;
+    }
+
+    public static List<ProductoResponseDto> toResponseDtoList(List <Producto> productos){
+        return productos.stream().map(ProductoMapper::toResponseDto).collect(Collectors.toList());
     }
 }

@@ -1,9 +1,10 @@
 package com.programacion4.unidad3ej3.feature.producto.config;
 
+import java.util.Random;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import java.util.Random;
 
 import com.programacion4.unidad3ej3.feature.producto.models.Producto;
 import com.programacion4.unidad3ej3.feature.producto.repositories.IProductoRepository;

@@ -12,6 +12,8 @@ import lombok.Getter;
 @Builder
 public class BaseResponse<T> {
     private final T data;
+    private final Integer status;
+    private final String path;
     private final String message;
     private final List<String> errors;
     private final String timestamp;
@@ -19,6 +21,8 @@ public class BaseResponse<T> {
     public static <T> BaseResponse<T> ok(T data, String message) {
         return BaseResponse.<T>builder()
                 .data(data)
+                .status(200)
+                .path(null)
                 .message(message)
                 .errors(null)
                 .timestamp(getCurrentTimestamp())
